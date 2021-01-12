@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import AboutUs from './AboutUs';
 import Contact from './Contact';
 import cover from '../assets/cover.png';
@@ -13,7 +14,7 @@ class App extends Component {
                 <img src={cover} alt='cover' className='actualcover' />
                 <h1>Welcome to Mix and Match!</h1>
                 <hr />
-                <a href='/tops'><img src={tops} alt='tops' className='cover' /></a>
+                <Link to='/tops'><img src={tops} alt='tops' className='cover' /></Link>
                 <a href='/outfits'><img src={outfit} alt='outfit' className='cover' /></a>
                 <a href='/bottoms'><img src={bottoms} alt='bottoms' className='cover' /></a>
                 <hr />
