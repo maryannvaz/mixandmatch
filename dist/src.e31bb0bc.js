@@ -29556,6 +29556,8 @@ module.exports = "/cover.e0ccda66.png";
 module.exports = "/tops.e3ab4948.png";
 },{}],"assets/bottoms.png":[function(require,module,exports) {
 module.exports = "/bottoms.fa879288.png";
+},{}],"assets/outfit.png":[function(require,module,exports) {
+module.exports = "/outfit.dd895974.png";
 },{}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
@@ -29575,6 +29577,8 @@ var _cover = _interopRequireDefault(require("../assets/cover.png"));
 var _tops = _interopRequireDefault(require("../assets/tops.png"));
 
 var _bottoms = _interopRequireDefault(require("../assets/bottoms.png"));
+
+var _outfit = _interopRequireDefault(require("../assets/outfit.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29621,10 +29625,14 @@ var App = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
         src: _cover.default,
         alt: "cover",
-        className: "cover"
+        className: "actualcover"
       }), /*#__PURE__*/_react.default.createElement("h1", null, "Welcome to Mix and Match!"), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("img", {
         src: _tops.default,
         alt: "tops",
+        className: "cover"
+      }), /*#__PURE__*/_react.default.createElement("img", {
+        src: _outfit.default,
+        alt: "outfit",
         className: "cover"
       }), /*#__PURE__*/_react.default.createElement("img", {
         src: _bottoms.default,
@@ -29639,7 +29647,7 @@ var App = /*#__PURE__*/function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./AboutUs":"components/AboutUs.js","./Contact":"components/Contact.js","../assets/cover.png":"assets/cover.png","../assets/tops.png":"assets/tops.png","../assets/bottoms.png":"assets/bottoms.png"}],"components/Header.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./AboutUs":"components/AboutUs.js","./Contact":"components/Contact.js","../assets/cover.png":"assets/cover.png","../assets/tops.png":"assets/tops.png","../assets/bottoms.png":"assets/bottoms.png","../assets/outfit.png":"assets/outfit.png"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29804,7 +29812,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49707" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62119" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

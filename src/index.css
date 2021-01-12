@@ -32,3 +32,11 @@ hr {
     border: 3px solid #555;
     margin: 25px 25px 25px 25px;
 }
+
+.actualcover {
+    width: 700px;
+    height: 288px;
+    border-radius: 50px;
+    border: 3px solid #555;
+    margin: 2px 2px 2px 2px;
+}
