@@ -29634,14 +29634,14 @@ var App = /*#__PURE__*/function (_Component) {
         src: _tops.default,
         alt: "tops",
         className: "cover"
-      })), /*#__PURE__*/_react.default.createElement("a", {
-        href: "/outfits"
+      })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+        to: "/outfits"
       }, /*#__PURE__*/_react.default.createElement("img", {
         src: _outfit.default,
         alt: "outfit",
         className: "cover"
-      })), /*#__PURE__*/_react.default.createElement("a", {
-        href: "/bottoms"
+      })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+        to: "/bottoms"
       }, /*#__PURE__*/_react.default.createElement("img", {
         src: _bottoms.default,
         alt: "bottoms",
