@@ -10,6 +10,8 @@ ReactDOM.render(
     <Router history={createBrowserHistory()}>
         <Switch>
             <Route exact path='/' render={() => <Header><App /></Header>} />
+            <Route exact path='/' render={() => <Header><Tops /></Header>} />
+            <Route exact path='/' render={() => <Header><Bottoms /></Header>} />
         </Switch>
     </Router>, 
     document.getElementById('root')
