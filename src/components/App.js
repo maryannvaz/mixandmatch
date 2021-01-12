@@ -13,9 +13,9 @@ class App extends Component {
                 <img src={cover} alt='cover' className='actualcover' />
                 <h1>Welcome to Mix and Match!</h1>
                 <hr />
-                <img src={tops} alt='tops' className='cover' />
-                <img src={outfit} alt='outfit' className='cover' />
-                <img src={bottoms} alt='bottoms' className='cover' />
+                <a href='/tops'><img src={tops} alt='tops' className='cover' /></a>
+                <a href='/outfits'><img src={outfit} alt='outfit' className='cover' /></a>
+                <a href='/bottoms'><img src={bottoms} alt='bottoms' className='cover' /></a>
                 <hr />
                 <AboutUs />
                 <hr />

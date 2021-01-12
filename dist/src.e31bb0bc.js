@@ -29626,19 +29626,25 @@ var App = /*#__PURE__*/function (_Component) {
         src: _cover.default,
         alt: "cover",
         className: "actualcover"
-      }), /*#__PURE__*/_react.default.createElement("h1", null, "Welcome to Mix and Match!"), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("img", {
+      }), /*#__PURE__*/_react.default.createElement("h1", null, "Welcome to Mix and Match!"), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("a", {
+        href: "/tops"
+      }, /*#__PURE__*/_react.default.createElement("img", {
         src: _tops.default,
         alt: "tops",
         className: "cover"
-      }), /*#__PURE__*/_react.default.createElement("img", {
+      })), /*#__PURE__*/_react.default.createElement("a", {
+        href: "/outfits"
+      }, /*#__PURE__*/_react.default.createElement("img", {
         src: _outfit.default,
         alt: "outfit",
         className: "cover"
-      }), /*#__PURE__*/_react.default.createElement("img", {
+      })), /*#__PURE__*/_react.default.createElement("a", {
+        href: "/bottoms"
+      }, /*#__PURE__*/_react.default.createElement("img", {
         src: _bottoms.default,
         alt: "bottoms",
         className: "cover"
-      }), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement(_AboutUs.default, null), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement(_Contact.default, null));
+      })), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement(_AboutUs.default, null), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement(_Contact.default, null));
     }
   }]);
 
@@ -29783,6 +29789,18 @@ _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_reactRouter
   path: "/",
   render: function render() {
     return /*#__PURE__*/_react.default.createElement(_Header.default, null, /*#__PURE__*/_react.default.createElement(_App.default, null));
+  }
+}), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/",
+  render: function render() {
+    return /*#__PURE__*/_react.default.createElement(_Header.default, null, /*#__PURE__*/_react.default.createElement(Tops, null));
+  }
+}), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/",
+  render: function render() {
+    return /*#__PURE__*/_react.default.createElement(_Header.default, null, /*#__PURE__*/_react.default.createElement(Bottoms, null));
   }
 }))), document.getElementById('root'));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","history/createBrowserHistory":"../node_modules/history/createBrowserHistory.js","./components/App":"components/App.js","./components/Header":"components/Header.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
