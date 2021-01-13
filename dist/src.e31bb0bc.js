@@ -29753,7 +29753,7 @@ var Tops = /*#__PURE__*/function (_Component) {
         "data-pin-scale-height": "300",
         "data-pin-scale-width": "300",
         href: "https://www.pinterest.com/thredup/_shop/"
-      }));
+      }), "console.log('Hi');");
     }
   }]);
 
