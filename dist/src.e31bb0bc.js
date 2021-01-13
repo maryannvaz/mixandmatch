@@ -29880,7 +29880,17 @@ var Bottoms = /*#__PURE__*/function (_Component) {
   _createClass(Bottoms, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Bottoms"));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("script", {
+        async: true,
+        defer: true,
+        src: "//assets.pinterest.com/js/pinit.js"
+      }), /*#__PURE__*/_react.default.createElement("h1", null, "Bottoms"), /*#__PURE__*/_react.default.createElement("a", {
+        "data-pin-do": "embedBoard",
+        "data-pin-board-width": "400",
+        "data-pin-scale-height": "240",
+        "data-pin-scale-width": "80",
+        href: "https://www.pinterest.com/buykud8/bottoms/"
+      }));
     }
   }]);
 
