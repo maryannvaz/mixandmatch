@@ -29743,7 +29743,17 @@ var Tops = /*#__PURE__*/function (_Component) {
   _createClass(Tops, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("script", {
+        async: true,
+        defer: true,
+        src: "//assets.pinterest.com/js/pinit.js"
+      }), /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("a", {
+        "data-pin-do": "embedUser",
+        "data-pin-board-width": "900",
+        "data-pin-scale-height": "300",
+        "data-pin-scale-width": "300",
+        href: "https://www.pinterest.com/thredup/_shop/"
+      }));
     }
   }]);
 
@@ -30021,7 +30031,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63475" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52622" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
