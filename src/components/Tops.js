@@ -13,7 +13,6 @@ class Tops extends Component {
                     data-pin-scale-width="300"
                     href="https://www.pinterest.com/thredup/_shop/"
                 ></a>
-                console.log('Hi');
             </div>
         )
     }
