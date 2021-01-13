@@ -29748,11 +29748,20 @@ var Tops = /*#__PURE__*/function (_Component) {
         defer: true,
         src: "//assets.pinterest.com/js/pinit.js"
       }), /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("a", {
+        "data-pin-do": "embedPin",
+        href: "https://www.pinterest.com/pin/50524827060163040/"
+      }), /*#__PURE__*/_react.default.createElement("a", {
         "data-pin-do": "embedUser",
         "data-pin-board-width": "900",
         "data-pin-scale-height": "300",
         "data-pin-scale-width": "300",
         href: "https://www.pinterest.com/thredup/_shop/"
+      }), /*#__PURE__*/_react.default.createElement("a", {
+        "data-pin-do": "embedUser",
+        "data-pin-board-width": "900",
+        "data-pin-scale-height": "300",
+        "data-pin-scale-width": "300",
+        href: "https://www.pinterest.com/forever21/_shop/4672924418152/?category=Shirts%2520%2526%2520tops&source=profile"
       }));
     }
   }]);
