@@ -5,6 +5,7 @@ class Outfits extends Component {
         return (
             <div>
                 <h1>Outfits</h1>
+                <h2>Create your own outfit!</h2>
             </div>
         )
     }

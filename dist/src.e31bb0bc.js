@@ -29743,26 +29743,7 @@ var Tops = /*#__PURE__*/function (_Component) {
   _createClass(Tops, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("script", {
-        async: true,
-        defer: true,
-        src: "//assets.pinterest.com/js/pinit.js"
-      }), /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("a", {
-        "data-pin-do": "embedPin",
-        href: "https://www.pinterest.com/pin/50524827060163040/"
-      }), /*#__PURE__*/_react.default.createElement("a", {
-        "data-pin-do": "embedUser",
-        "data-pin-board-width": "900",
-        "data-pin-scale-height": "300",
-        "data-pin-scale-width": "300",
-        href: "https://www.pinterest.com/thredup/_shop/"
-      }), /*#__PURE__*/_react.default.createElement("a", {
-        "data-pin-do": "embedUser",
-        "data-pin-board-width": "900",
-        "data-pin-scale-height": "300",
-        "data-pin-scale-width": "300",
-        href: "https://www.pinterest.com/forever21/_shop/4672924418152/?category=Shirts%2520%2526%2520tops&source=profile"
-      }));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"));
     }
   }]);
 
@@ -29821,7 +29802,7 @@ var Outfits = /*#__PURE__*/function (_Component) {
   _createClass(Outfits, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Outfits"));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Outfits"), /*#__PURE__*/_react.default.createElement("h2", null, "Create your own outfit!"));
     }
   }]);
 
@@ -29880,17 +29861,7 @@ var Bottoms = /*#__PURE__*/function (_Component) {
   _createClass(Bottoms, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("script", {
-        async: true,
-        defer: true,
-        src: "//assets.pinterest.com/js/pinit.js"
-      }), /*#__PURE__*/_react.default.createElement("h1", null, "Bottoms"), /*#__PURE__*/_react.default.createElement("a", {
-        "data-pin-do": "embedBoard",
-        "data-pin-board-width": "400",
-        "data-pin-scale-height": "240",
-        "data-pin-scale-width": "80",
-        href: "https://www.pinterest.com/buykud8/bottoms/"
-      }));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Bottoms"));
     }
   }]);
 
