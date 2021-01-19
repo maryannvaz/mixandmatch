@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
-import inventory from '../assets/Mixandmatch inventory.xlsx';
+
+if(typeof require !== 'undefined') XLSX = require('xlsx');
+//let file = XLSX.readFile('Mixandmatchinventory.xlsx');
+let file = XLSX.writeFile(workbook, 'Mixandmatchinventory.xlsx');
 
 const Tops = () => {
     const [items, setItems] = useState([])
@@ -36,19 +39,11 @@ const Tops = () => {
         })
     };
 
-    var blob = new Blob([inventory], { type: 'file' });
-
     return (
         <div>
             <h1>Tops</h1>
             <div>
-
-                {
-                    //const file = inventory;
-                    //readExcel(file);
-                    readExcel(inventory.target.files[0])
-                }
-
+                
                 {items.map((d) => (
                 
                 <figure class="figure">

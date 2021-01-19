@@ -87417,9 +87417,7 @@ if (typeof exports !== 'undefined') make_xlsx_lib(exports);else if (typeof modul
 
 var XLS = XLSX,
     ODS = XLSX;
-},{"./dist/cpexcel.js":"../node_modules/xlsx/dist/cpexcel.js","fs":"../node_modules/parcel-bundler/src/builtins/_empty.js","./jszip.js":"../node_modules/xlsx/jszip.js","crypto":"../node_modules/parcel-bundler/src/builtins/_empty.js","stream":"../node_modules/parcel-bundler/src/builtins/_empty.js","buffer":"../node_modules/parcel-bundler/src/builtins/_empty.js","process":"../node_modules/parcel-bundler/src/builtins/_empty.js"}],"assets/Mixandmatch inventory.xlsx":[function(require,module,exports) {
-module.exports = "/Mixandmatch inventory.132d003f.xlsx";
-},{}],"components/Tops.js":[function(require,module,exports) {
+},{"./dist/cpexcel.js":"../node_modules/xlsx/dist/cpexcel.js","fs":"../node_modules/parcel-bundler/src/builtins/_empty.js","./jszip.js":"../node_modules/xlsx/jszip.js","crypto":"../node_modules/parcel-bundler/src/builtins/_empty.js","stream":"../node_modules/parcel-bundler/src/builtins/_empty.js","buffer":"../node_modules/parcel-bundler/src/builtins/_empty.js","process":"../node_modules/parcel-bundler/src/builtins/_empty.js"}],"components/Tops.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87430,10 +87428,6 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var XLSX = _interopRequireWildcard(require("xlsx"));
-
-var _MixandmatchInventory = _interopRequireDefault(require("../assets/Mixandmatch inventory.xlsx"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -87450,6 +87444,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+if (typeof require !== 'undefined') XLSX = (require('xlsx'), function () {
+  throw new Error('"' + "XLSX" + '" is read-only.');
+}()); //let file = XLSX.readFile('Mixandmatchinventory.xlsx');
+
+var file = XLSX.writeFile(workbook, 'Mixandmatchinventory.xlsx');
 
 var Tops = function Tops() {
   var _useState = (0, _react.useState)([]),
@@ -87482,12 +87482,7 @@ var Tops = function Tops() {
     });
   };
 
-  var blob = new Blob([_MixandmatchInventory.default], {
-    type: 'file'
-  });
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("div", null, //const file = inventory;
-  //readExcel(file);
-  readExcel(_MixandmatchInventory.default.target.files[0]), items.map(function (d) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("div", null, items.map(function (d) {
     return /*#__PURE__*/_react.default.createElement("figure", {
       class: "figure"
     }, /*#__PURE__*/_react.default.createElement("a", {
@@ -87533,7 +87528,7 @@ var Tops = function Tops() {
 
 var _default = Tops;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","xlsx":"../node_modules/xlsx/xlsx.js","../assets/Mixandmatch inventory.xlsx":"assets/Mixandmatch inventory.xlsx"}],"components/Outfits.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","xlsx":"../node_modules/xlsx/xlsx.js"}],"components/Outfits.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87802,7 +87797,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58305" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50279" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
