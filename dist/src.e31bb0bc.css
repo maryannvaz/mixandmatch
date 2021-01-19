@@ -40,3 +40,12 @@ hr {
     border: 3px solid #555;
     margin: 2px 2px 2px 2px;
 }
+
+.figureClass {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+}
