@@ -87445,12 +87445,9 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-if (typeof require !== 'undefined') XLSX = (require('xlsx'), function () {
-  throw new Error('"' + "XLSX" + '" is read-only.');
-}()); //let file = XLSX.readFile('Mixandmatchinventory.xlsx');
-
-var file = XLSX.writeFile(workbook, 'Mixandmatchinventory.xlsx');
-
+//if(typeof require !== 'undefined') XLSX = require('xlsx');
+//let file = XLSX.readFile('Mixandmatchinventory.xlsx');
+//let file = XLSX.writeFile(workbook, 'Mixandmatchinventory.xlsx');
 var Tops = function Tops() {
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -87482,7 +87479,13 @@ var Tops = function Tops() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("div", null, items.map(function (d) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
+    type: "file",
+    onChange: function onChange(e) {
+      var file = e.target.files[0];
+      readExcel(file);
+    }
+  }), items.map(function (d) {
     return /*#__PURE__*/_react.default.createElement("figure", {
       class: "figure"
     }, /*#__PURE__*/_react.default.createElement("a", {

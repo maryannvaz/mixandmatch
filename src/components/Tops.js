@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 
-if(typeof require !== 'undefined') XLSX = require('xlsx');
+//if(typeof require !== 'undefined') XLSX = require('xlsx');
 //let file = XLSX.readFile('Mixandmatchinventory.xlsx');
-let file = XLSX.writeFile(workbook, 'Mixandmatchinventory.xlsx');
+//let file = XLSX.writeFile(workbook, 'Mixandmatchinventory.xlsx');
 
 const Tops = () => {
     const [items, setItems] = useState([])
@@ -43,6 +43,14 @@ const Tops = () => {
         <div>
             <h1>Tops</h1>
             <div>
+
+                <input 
+                    type="file"
+                    onChange={(e) => {
+                        const file = e.target.files[0];
+                        readExcel(file);
+                    }}
+                />
                 
                 {items.map((d) => (
                 
