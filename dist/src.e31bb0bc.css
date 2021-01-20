@@ -39,6 +39,7 @@ hr {
     border-radius: 50px;
     border: 3px solid #555;
     margin: 2px 2px 2px 2px;
+<<<<<<< HEAD
 }
 
 .figure {
@@ -63,4 +64,6 @@ hr {
     background-color: black;
     color: white;
     padding: 5px;
+=======
+>>>>>>> 99215be4c1f5d723caa01a61a7814fb2f904e2db
 }
