@@ -11,12 +11,12 @@ class App extends Component {
     render() {
         return (
             <div>
-                <img src={cover} alt='cover' className='actualcover' />
+                <img src={cover} alt='cover' className='logo' />
                 <h1>Welcome to Mix and Match!</h1>
                 <hr />
-                <Link to='/tops'><img src={tops} alt='tops' className='cover' /></Link>
-                <Link to='/outfits'><img src={outfit} alt='outfit' className='cover' /></Link>
-                <Link to='/bottoms'><img src={bottoms} alt='bottoms' className='cover' /></Link>
+                <Link to='/tops'><img src={tops} alt='tops' className='buttons' /></Link>
+                <Link to='/outfits'><img src={outfit} alt='outfit' className='buttons' /></Link>
+                <Link to='/bottoms'><img src={bottoms} alt='bottoms' className='buttons' /></Link>
                 <hr />
                 <AboutUs />
                 <hr />

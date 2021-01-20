@@ -11,7 +11,7 @@
 
 body {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     padding: 2.5%;
     font-family: 'RobotoCondensed';
 }
@@ -25,21 +25,26 @@ hr {
     background: black;
 }
 
-.cover {
-    width: 350px;
-    height: 144px;
+.buttons {
+    width: 30%;
+    height: 50%;
+    object-fit: cover;
     border-radius: 50px;
     border: 3px solid #555;
-    margin: 25px 25px 25px 25px;
+    margin: 10px 10px 10px 10px;
 }
 
-.actualcover {
+.buttons:hover {
+    opacity: 60%;
+    box-shadow: 8px 8px;
+}
+
+.logo {
     width: 700px;
     height: 288px;
     border-radius: 50px;
     border: 3px solid #555;
-    margin: 2px 2px 2px 2px;
-<<<<<<< HEAD
+    margin: 2px;
 }
 
 .figure {
@@ -47,8 +52,13 @@ hr {
     height: 350px;
     position: relative;
     display: inline-block;
-    margin: 20px;
+    margin:70px 20px 70px 20px;
     cursor: pointer;
+    padding: 5px;
+}
+
+.figure:hover {
+    opacity: 70%;
 }
 
 .figure-image {
@@ -60,10 +70,7 @@ hr {
 .figure-text {
     position: absolute;
     width: 250px;
-    bottom: 0px;
-    background-color: black;
-    color: white;
-    padding: 5px;
-=======
->>>>>>> 99215be4c1f5d723caa01a61a7814fb2f904e2db
+    bottom: -100px;
+    padding: 10px;
+    text-align: left;
 }

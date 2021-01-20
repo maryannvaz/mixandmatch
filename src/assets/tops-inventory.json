@@ -1,0 +1,202 @@
+[
+    {
+        "id": "1",
+        "Item": "Floral Flounce-Hem Top",
+        "Price": "17.99",
+        "Size": "S, M, L",
+        "Brand": "Forever 21",
+        "Color": "IVORY/BEIGE",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dwde34efc4/1_front_750/00425127-01.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000425127.html"
+    },
+    {
+        "id": "2",
+        "Item": "Snake Print Bodysuit",
+        "Price": "14.99",
+        "Size": "XS, S, M, L, XL",
+        "Brand": "Forever 21",
+        "Color": "BLACK/WHITE",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw7d7dd6de/1_front_750/00423849-01.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000423849.html"
+    },
+    {
+        "id": "3",
+        "Item": "Square-Neck Crop Top",
+        "Price": "14.99",
+        "Size": "XS, S, M, L, XL",
+        "Brand": "Forever 21",
+        "Color": "BLACK",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dwbd86898a/1_front_750/00425468-01.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000425468.html"
+    },
+    {
+        "id": "4",
+        "Item": "Crisscross Cropped Cami",
+        "Price": "15.00",
+        "Size": "S, M, L",
+        "Brand": "Forever 21",
+        "Color": "SILVER",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw5a1a26a6/1_front_750/00418293-01.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000418293.html"
+    },
+    {
+        "id": "5",
+        "Item": "Ruffle-Trim Crop Top",
+        "Price": "20.00",
+        "Size": "S, M, L",
+        "Brand": "Forever 21",
+        "Color": "BLACK",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dwc1b0e017/1_front_750/00421831-02.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000421831.html"
+    },
+    {
+        "id": "6",
+        "Item": "Puff-Sleeve Crop Top",
+        "Price": "17.99",
+        "Size": "S, M, L",
+        "Brand": "Forever 21",
+        "Color": "LIGHT YELLOW",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw9f680250/1_front_750/00424180-02.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000424180.html"
+    },
+    {
+        "id": "7",
+        "Item": "Smitten Ribbed Top",
+        "Price": "44.00",
+        "Size": "XS, S, M, L, XL",
+        "Brand": "Urban Outfitters",
+        "Color": "Rust",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/59782540_086_d?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/uo-smitten-ribbed-peplum-top?category=womens-tops&color=086&type=REGULAR&quantity=1"
+    },
+    {
+        "id": "8",
+        "Item": "Nike Mock Neck Sweatshirt",
+        "Price": "60.00",
+        "Size": "XS, S, M, L, XL",
+        "Brand": "Urban Outfitters",
+        "Color": "Grey",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/56662729_004_b?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/nike-sportswear-essential-fleece-mock-neck-sweatshirt?category=womens-tops&color=004&type=REGULAR&quantity=1"
+    },
+    {
+        "id": "9",
+        "Item": "Skateboard Skeletons Tee",
+        "Price": "34.00",
+        "Size": "One Size",
+        "Brand": "Urban Outfitters",
+        "Color": "Washed Black",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/50291939_001_b?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/project-social-t-skateboard-skeletons-tee?category=womens-tops&color=001&type=REGULAR&size=ONE%20SIZE&quantity=1"
+    },
+    {
+        "id": "10",
+        "Item": "Monochrome Tie-Dye Crew Neck",
+        "Price": "59.00",
+        "Size": "One Size",
+        "Brand": "Urban Outfitters",
+        "Color": "Black and White",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/56381833_018_d?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/urban-renewal-recycled-monochrome-tie-dye-crew-neck-sweatshirt?category=womens-tops&color=018&type=REGULAR&size=ONE%20SIZE&quantity=1"
+    },
+    {
+        "id": "11",
+        "Item": "Old Soul Smocked Top",
+        "Price": "40.00",
+        "Size": "XS, S, M, L, XL",
+        "Brand": "Urban Outfitters",
+        "Color": "Floral Multi",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/58484965_039_b?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/uo-old-soul-smocked-top?category=womens-tops&color=039&type=REGULAR&quantity=1"
+    },
+    {
+        "id": "12",
+        "Item": "Fuzzy Baby Tee",
+        "Price": "49.00",
+        "Size": "XS, S, M, L, XL",
+        "Brand": "Urban Outfitters",
+        "Color": "Ivory",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/59973610_011_b?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/uo-fuzzy-baby-tee?category=womens-tops&color=011&type=REGULAR&quantity=1"
+    },
+    {
+        "id": "13",
+        "Item": "Tie-detail Blouse",
+        "Price": "29.99",
+        "Size": "XS, S, M, L, XL, XXL",
+        "Brand": "H&M",
+        "Color": "Dark sage green",
+        "Image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F5d%2F9a%2F5d9ad01efc607ba36291aa83a0eed5b0304c9cb1.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_shirtsblouses_blouses%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+        "Link": "https://www2.hm.com/en_us/productpage.0927662004.html"
+    },
+    {
+        "id": "14",
+        "Item": "EveryWear Tee",
+        "Price": "10.00",
+        "Size": "XS, S, M, L, XL, XXL",
+        "Brand": "Old Navy",
+        "Color": "Choose Happy",
+        "Image": "https://oldnavy.gap.com/webcontent/0019/967/028/cn19967028.jpg",
+        "Link": "https://oldnavy.gap.com/browse/product.do?pid=676978022&cid=1000179&pcid=1000179&vid=1&nav=leftnav%3Awomen%3Ashop%20women%27s%20categories%3Agraphic%20tees&grid=pds_34_210_1&cpos=34&cexp=2223&kcid=CategoryIDs%3D1000179&cvar=16849&ctype=Listing&cpid=res21011913949564790795354#pdp-page-content"
+    },
+    {
+        "id": "15",
+        "Item": "Satin V-Neck Blouse",
+        "Price": "63.00",
+        "Size": "XXS, XS, S, M, L, XL, XXL",
+        "Brand": "Banana Republic",
+        "Color": "Moondust",
+        "Image": "https://bananarepublic.gap.com/webcontent/0019/944/360/cn19944360.jpg",
+        "Link": "https://bananarepublic.gap.com/browse/product.do?pid=875838002&cid=5037&pcid=5037&vid=1&nav=meganav%3AWomen%3AWomen%27s%20Apparel%3ATops%20%26%20Blouses&grid=pds_160_373_1&cpos=161&cexp=2246&kcid=CategoryIDs%3D5037&cvar=17155&ctype=Listing&cpid=res21011913905785561495360#pdp-page-content"
+    },
+    {
+        "id": "16",
+        "Item": "Ribbed Shrunken Tee",
+        "Price": "10.00",
+        "Size": "XS, S, M, L, XL, XXL",
+        "Brand": "Aeropostale",
+        "Color": "Black Fox",
+        "Image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw76f6022b/80098325_007_main.jpg?sw=460&sh=535&sm=fit&sfrm=jpg",
+        "Link": "https://www.aeropostale.com/long-sleeve-ribbed-shrunken-tee/80098325.html?dwvar_80098325_color=7&cgid=girls-tops#start=1"
+    },
+    {
+        "id": "17",
+        "Item": "Half-Zip Pullover",
+        "Price": "16.00",
+        "Size": "XS, S, M, L, XL, XXL",
+        "Brand": "Aeropostale",
+        "Color": "Dark Ash",
+        "Image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw09cbd8aa/81998884_058_main.jpg?sw=460&sh=535&sm=fit&sfrm=jpg",
+        "Link": "https://www.aeropostale.com/burnout-fleece-half-zip-pullover/81998884.html?dwvar_81998884_color=58&cgid=girls-tops#start=26"
+    },
+    {
+        "id": "18",
+        "Item": "Aero Butterfly Tee",
+        "Price": "24.95",
+        "Size": "XS, S, M, L, XL",
+        "Brand": "Aeropostale",
+        "Color": "Black Fox",
+        "Image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw50801f22/80105385_007_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",
+        "Link": "https://www.aeropostale.com/87-aero-butterfly-graphic-tee/80105385.html?dwvar_80105385_color=007&cgid=girls-tops#start=123"
+    },
+    {
+        "id": "19",
+        "Item": "Mixed-Stitch Turtleneck",
+        "Price": "10.99",
+        "Size": "XS, S, XXL",
+        "Brand": "Aeropostale",
+        "Color": "Everglade Olive",
+        "Image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw76f34c13/82739330_195_alt1.jpg?sw=460&sh=535&sm=fit&sfrm=jpg",
+        "Link": "https://www.aeropostale.com/mixed-stitch-turtleneck-sweater/0093317123.html"
+    },
+    {
+        "id": "20",
+        "Item": "Ragged Knit Sweater",
+        "Price": "85.00",
+        "Size": "XS, S, M, L",
+        "Brand": "Urban Outfitters",
+        "Color": "Black Multi",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/58671074_009_b?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/the-ragged-priest-paneled-knit-sweater?category=womens-tops&color=009&type=REGULAR&quantity=1"
+    }
+]

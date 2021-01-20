@@ -1,0 +1,202 @@
+[
+    {
+        "id": "1",
+        "Item": "Soft AF Joggers",
+        "Price": "55.00",
+        "Size": "XS-XL",
+        "Brand": "Abercrombie & Fitch",
+        "Color": "Black",
+        "Image": "https://img.abercrombie.com/is/image/anf/KIC_147-1115-0642-900_model2?policy=product-large",
+        "Link": "https://www.abercrombie.com/shop/us/p/tie-dye-joggers-42861819?categoryId=62890937&seq=02&faceout=model1"
+    },
+    {
+        "id": "2",
+        "Item": "High Rise Straight Jeans",
+        "Price": "89.00",
+        "Size": "24W, 25W, 26W",
+        "Brand": "Abercrombie & Fitch",
+        "Color": "Medium Wash",
+        "Image": "https://img.abercrombie.com/is/image/anf/KIC_155-1559-2518-278_model2?policy=product-large",
+        "Link": "https://www.abercrombie.com/shop/us/p/curve-love-ultra-high-rise-ankle-straight-jeans-44276088?categoryId=6570724&seq=12&faceout=model1"
+    },
+    {
+        "id": "3",
+        "Item": "Vegan Leather Leggings",
+        "Price": "69.00",
+        "Size": "XXS-XL",
+        "Brand": "Abercrombie & Fitch",
+        "Color": "Black",
+        "Image": "https://img.abercrombie.com/is/image/anf/KIC_147-2680-0075-900_model3?policy=product-large",
+        "Link": "https://www.abercrombie.com/shop/us/p/vegan-leather-leggings-42093319?categoryId=6570724&seq=01&faceout=model1"
+    },
+    {
+        "id": "4",
+        "Item": "Mom Loose-fit Twill Pants",
+        "Price": "17.99",
+        "Size": "0 - 10",
+        "Brand": "H&M",
+        "Color": "Dark gray",
+        "Image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fbd%2F84%2Fbd84b29d9de3c799cae4347228c4c558c9ccb15b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_trousers_highwaisted%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+        "Link": "https://www2.hm.com/en_us/productpage.0894668005.html"
+    },
+    {
+        "id": "5",
+        "Item": "Slacks",
+        "Price": "19.99",
+        "Size": "0 - 16",
+        "Brand": "H&M",
+        "Color": "Light gray/white plaid",
+        "Image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F38%2Fc1%2F38c1e4c2df0b0a1fb5da4e00be2e1aff984440ec.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_trousers_chinosslacks%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+        "Link": "https://www2.hm.com/en_us/productpage.0751471047.html"
+    },
+    {
+        "id": "6",
+        "Item": "Essex Ankle Dress Pants",
+        "Price": "53.40",
+        "Size": "0 - 18",
+        "Brand": "Macy's",
+        "Color": "Black",
+        "Image": "https://slimages.macys.com/is/image/MCY/products/1/optimized/11464861_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$",
+        "Link": "https://www.macys.com/shop/product/dkny-essex-ankle-dress-pants?ID=8060982&CategoryID=54698&swatchColor=Black"
+    },
+    {
+        "id": "7",
+        "Item": "Nine West Plaid Skinny Pants",
+        "Price": "44.50",
+        "Size": "4 - 16",
+        "Brand": "Macy's",
+        "Color": "Black/Lily White",
+        "Image": "https://slimages.macys.com/is/image/MCY/products/1/optimized/16684551_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$",
+        "Link": "https://www.macys.com/shop/product/nine-west-plaid-skinny-pants?ID=10500696&CategoryID=54698"
+    },
+    {
+        "id": "8",
+        "Item": "Cotton Pleated Pants",
+        "Price": "29.99",
+        "Size": "1 - 12",
+        "Brand": "Macy's",
+        "Color": "Khaki",
+        "Image": "https://slimages.macys.com/is/image/MCY/products/0/optimized/18361930_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$",
+        "Link": "https://www.macys.com/shop/product/mango-womens-cotton-pleated-pants?ID=11530061&CategoryID=54698&swatchColor=Khaki"
+    },
+    {
+        "id": "9",
+        "Item": "Alfani Petite Skinny Pants",
+        "Price": "34.75",
+        "Size": "2P - 10P",
+        "Brand": "Macy's",
+        "Color": "Warm Ginger",
+        "Image": "https://slimages.macys.com/is/image/MCY/products/3/optimized/11278343_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$",
+        "Link": "https://www.macys.com/shop/product/alfani-petite-bi-stretch-hollywood-skinny-pants-created-for-macys?ID=11832474&CategoryID=54698"
+    },
+    {
+        "id": "10",
+        "Item": "Sequined Skinny Ankle Pants",
+        "Price": "59.75",
+        "Size": "XS-L",
+        "Brand": "Macy's",
+        "Color": "Black",
+        "Image": "https://slimages.macys.com/is/image/MCY/products/4/optimized/15451574_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$",
+        "Link": "https://www.macys.com/shop/product/inc-sequined-skinny-ankle-pants-created-for-macys?ID=7094847&CategoryID=54698"
+    },
+    {
+        "id": "11",
+        "Item": "Floral Satin Midi Skirt",
+        "Price": "17.99",
+        "Size": "XS-L",
+        "Brand": "Forever 21",
+        "Color": "White/Multi",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw4cc1e986/2_side_750/00432603-01.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000432603.html"
+    },
+    {
+        "id": "12",
+        "Item": "Paperbag Corduroy Mini Skirt",
+        "Price": "19.99",
+        "Size": "S, M, L",
+        "Brand": "Forever 21",
+        "Color": "Black",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw5193b0de/5_detail_750/00420289-01.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000420289.html?dwvar_2000420289_color=01&quantity=1"
+    },
+    {
+        "id": "13",
+        "Item": "Paperbag Denim Shorts",
+        "Price": "19.99",
+        "Size": "XS-L",
+        "Brand": "Forever 21",
+        "Color": "Medium Denim",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw9ca422f6/3_back_750/00425089-01.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000425089.html"
+    },
+    {
+        "id": "14",
+        "Item": "High-Rise Mom Jeans",
+        "Price": "34.99",
+        "Size": "28, 29, 30",
+        "Brand": "Forever 21",
+        "Color": "Light Denim",
+        "Image": "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dwaf3fa323/2_side_750/00424603-02.jpg?sw=500&sh=750",
+        "Link": "https://www.forever21.com/us/2000424603.html"
+    },
+    {
+        "id": "15",
+        "Item": "Cargo Sweatpants",
+        "Price": "30.06",
+        "Size": "XS-L",
+        "Brand": "PacSun",
+        "Color": "Brown",
+        "Image": "https://www.pacsun.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-pacsun_storefront_catalog/default/dwc46fbcea/product_images/0850484260029NEW_00_020.jpg?sw=690&sh=1070&sm=fit",
+        "Link": "https://www.pacsun.com/pacsun/cargo-sweatpants-0850484260029.html?dwvar_0850484260029_color=020&dwvar_0850484260029_size=9100&cgid=womens-cargo"
+    },
+    {
+        "id": "16",
+        "Item": "High Waisted Straight Leg Jeans",
+        "Price": "59.95",
+        "Size": "22-32",
+        "Brand": "PacSun",
+        "Color": "Medium Indigo",
+        "Image": "https://www.pacsun.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-pacsun_storefront_catalog/default/dw677914a7/product_images/0860103680287NEW_02_349.jpg?sw=690&sh=1070&sm=fit",
+        "Link": "https://www.pacsun.com/pacsun/light-high-waisted-straight-leg-jeans-0860103680287.html?dwvar_0860103680287_color=349&cgid=womens-jeans-straight"
+    },
+    {
+        "id": "17",
+        "Item": "Medium Mom Jeans",
+        "Price": "54.95",
+        "Size": "22-32",
+        "Brand": "PacSun",
+        "Color": "Medium Indigo",
+        "Image": "https://www.pacsun.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-pacsun_storefront_catalog/default/dwe9cf0eab/product_images/0860445380266NEW_01_349.jpg?sw=690&sh=1070&sm=fit",
+        "Link": "https://www.pacsun.com/pacsun/medium-mom-jeans-0860445380266.html?dwvar_0860445380266_color=349&cgid=mom-jeans"
+    },
+    {
+        "id": "18",
+        "Item": "BDG Corduroy Baggy Pant",
+        "Price": "69.00",
+        "Size": "24-34",
+        "Brand": "Urban Outfitters",
+        "Color": "Taupe",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/58677782_004_d?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/bdg-bubble-corduroy-high-waisted-baggy-pant?category=womens-bottoms&color=004&type=REGULAR&quantity=1"
+    },
+    {
+        "id": "19",
+        "Item": "Plaid Pleated Mini Skirt",
+        "Price": "59.00",
+        "Size": "XXS-XXL",
+        "Brand": "Urban Outfitters",
+        "Color": "Black Multi",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/54672704_009_d?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/uo-mary-plaid-pleated-mini-skirt?category=womens-bottoms&color=009&type=REGULAR&quantity=1"
+    },
+    {
+        "id": "20",
+        "Item": "BDG Corduroy Mom Pant",
+        "Price": "59.00",
+        "Size": "24-34",
+        "Brand": "Urban Outfitters",
+        "Color": "Olive",
+        "Image": "https://s7d5.scene7.com/is/image/UrbanOutfitters/58022658_031_d?$xlarge$=&fit=constrain&fmt=webp&qlt=80&wid=1366",
+        "Link": "https://www.urbanoutfitters.com/shop/bdg-color-corduroy-high-waisted-mom-pant?inventoryCountry=US&color=031&size=25&gclid=CjwKCAiAo5qABhBdEiwAOtGmbmZ7UzmlvC4gH6NDaKSw0PpLVn4OZ4jpsR5OZuZ_AQR8iKDp-JCJPRoChnAQAvD_BwE&gclsrc=aw.ds&type=REGULAR&quantity=1"
+    }
+]
