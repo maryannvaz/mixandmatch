@@ -42,9 +42,7 @@ const Tops = () => {
     return (
         <div>
             <h1>Tops</h1>
-            <div
-                className='inventory'
-            >
+            <div>
 
                 <input 
                     type="file"
@@ -56,9 +54,9 @@ const Tops = () => {
                 
                 {items.map((d) => (
                 
-                <figure class="figure" className='figureClass'>
-                    <a href={d.Link}><img src={d.Image} class="figure-img img-fluid rounded" alt="image" /></a>
-                    <figcaption class="figure-caption">{d.Item},{d.Price},{d.Size},{d.Brand},{d.Color}</figcaption>
+                <figure class="figure" className='figure'>
+                    <a href={d.Link}><img src={d.Image} class="figure-img img-fluid rounded" alt="image" className='figure-image'/></a>
+                    <figcaption class="figure-caption" className='figure-text'>{d.Item},{d.Price},{d.Size},{d.Brand},{d.Color}</figcaption>
                 </figure>
                 ))}
                 

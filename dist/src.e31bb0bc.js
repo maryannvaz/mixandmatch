@@ -87479,9 +87479,7 @@ var Tops = function Tops() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("div", {
-    className: "inventory"
-  }, /*#__PURE__*/_react.default.createElement("input", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
     type: "file",
     onChange: function onChange(e) {
       var file = e.target.files[0];
@@ -87490,15 +87488,17 @@ var Tops = function Tops() {
   }), items.map(function (d) {
     return /*#__PURE__*/_react.default.createElement("figure", {
       class: "figure",
-      className: "figureClass"
+      className: "figure"
     }, /*#__PURE__*/_react.default.createElement("a", {
       href: d.Link
     }, /*#__PURE__*/_react.default.createElement("img", {
       src: d.Image,
       class: "figure-img img-fluid rounded",
-      alt: "image"
+      alt: "image",
+      className: "figure-image"
     })), /*#__PURE__*/_react.default.createElement("figcaption", {
-      class: "figure-caption"
+      class: "figure-caption",
+      className: "figure-text"
     }, d.Item, ",", d.Price, ",", d.Size, ",", d.Brand, ",", d.Color));
   })));
 };
@@ -87829,7 +87829,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61893" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49202" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

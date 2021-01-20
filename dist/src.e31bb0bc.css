@@ -41,11 +41,26 @@ hr {
     margin: 2px 2px 2px 2px;
 }
 
-.figureClass {
-    width: 25px;
-    height: 25px;
+.figure {
+    width: 250px;
+    height: 350px;
     position: relative;
     display: inline-block;
     margin: 20px;
     cursor: pointer;
+}
+
+.figure-image {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.figure-text {
+    position: absolute;
+    width: 250px;
+    bottom: 0px;
+    background-color: black;
+    color: white;
+    padding: 5px;
 }
