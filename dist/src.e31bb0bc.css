@@ -25,12 +25,18 @@ hr {
     background: black;
 }
 
+.bar {
+    display: inline-block;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
 .buttons {
     width: 30%;
     height: 50%;
     object-fit: cover;
     border-radius: 50px;
-    border: 3px solid #555;
+    border: 1px solid #555;
     margin: 10px 10px 10px 10px;
 }
 
@@ -43,7 +49,17 @@ hr {
     width: 700px;
     height: 288px;
     border-radius: 50px;
-    border: 3px solid #555;
+    border: 1px solid #555;
+    margin: 2px;
+}
+
+.geometry-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    float: left;
+    border-radius: 0px;
+    border: 1px solid #555;
     margin: 2px;
 }
 

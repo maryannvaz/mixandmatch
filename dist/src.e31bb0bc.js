@@ -35088,7 +35088,9 @@ var App = /*#__PURE__*/function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./AboutUs":"components/AboutUs.js","./Contact":"components/Contact.js","../assets/cover.png":"assets/cover.png","../assets/tops.png":"assets/tops.png","../assets/bottoms.png":"assets/bottoms.png","../assets/outfit.png":"assets/outfit.png"}],"components/Header.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./AboutUs":"components/AboutUs.js","./Contact":"components/Contact.js","../assets/cover.png":"assets/cover.png","../assets/tops.png":"assets/tops.png","../assets/bottoms.png":"assets/bottoms.png","../assets/outfit.png":"assets/outfit.png"}],"assets/geometrylogo.png":[function(require,module,exports) {
+module.exports = "/geometrylogo.b02b3d35.png";
+},{}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35100,33 +35102,34 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _geometrylogo = _interopRequireDefault(require("../assets/geometrylogo.png"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header(_ref) {
   var children = _ref.children;
-  var style = {
-    display: 'inline-block',
-    margin: 10,
-    marginBottom: 30
-  };
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", {
-    style: style
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "bar"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, "Home")), /*#__PURE__*/_react.default.createElement("h3", {
-    style: style
+    className: "bar"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, "About Us")), /*#__PURE__*/_react.default.createElement("h3", {
-    style: style
+    className: "bar"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, "Contact"))), children);
+  }, "Contact")), children);
 };
 
 var _default = Header;
+/*
+<img src={logo} alt="logo" className='geometry-logo' ></img>
+*/
+
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"assets/tops-inventory.json":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../assets/geometrylogo.png":"assets/geometrylogo.png"}],"assets/tops-inventory.json":[function(require,module,exports) {
 module.exports = [{
   "id": "1",
   "Item": "Floral Flounce-Hem Top",
@@ -35348,36 +35351,52 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var wasClicked = false;
+
 var Tops = /*#__PURE__*/function (_Component) {
   _inherits(Tops, _Component);
 
   var _super = _createSuper(Tops);
 
   function Tops() {
+    var _this;
+
     _classCallCheck(this, Tops);
 
-    return _super.apply(this, arguments);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "myFunction", function () {
+      wasClicked = true;
+    });
+
+    return _this;
   }
 
   _createClass(Tops, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, _topsInventory.default.map(function (d, index) {
-        return /*#__PURE__*/_react.default.createElement("figure", {
-          class: "figure",
-          className: "figure"
-        }, /*#__PURE__*/_react.default.createElement("a", {
-          href: d.Link
-        }, /*#__PURE__*/_react.default.createElement("img", {
-          src: d.Image,
-          class: "figure-img img-fluid rounded",
-          alt: "image",
-          className: "figure-image"
-        })), /*#__PURE__*/_react.default.createElement("figcaption", {
-          class: "figure-caption",
-          className: "figure-text"
-        }, d.Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, d.Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", d.Price));
-      }));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Tops"), /*#__PURE__*/_react.default.createElement("button", {
+        onClick: this.myFunction
+      }, "Click me!"), /*#__PURE__*/_react.default.createElement("figure", {
+        class: "figure",
+        className: "figure"
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: _topsInventory.default[index].Link
+      }, /*#__PURE__*/_react.default.createElement("img", {
+        src: _topsInventory.default[index].Image,
+        class: "figure-img img-fluid rounded",
+        alt: "image",
+        className: "figure-image"
+      })), /*#__PURE__*/_react.default.createElement("figcaption", {
+        class: "figure-caption",
+        className: "figure-text"
+      }, _topsInventory.default[index].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _topsInventory.default[index].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _topsInventory.default[index].Price)));
     }
   }]);
 
@@ -35385,6 +35404,59 @@ var Tops = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 var _default = Tops;
+/*
+int index = 0;
+for (int i = 0; i < TopsData.length; i++) {
+    if ( user clicks the button ) {
+        index++; 
+        {
+            <figure class="figure" className='figure'>
+                        <a href={TopsData[index].Link}><img src={TopsData[index].Image} class="figure-img img-fluid rounded" alt="image" className='figure-image'/></a>
+                        <figcaption class="figure-caption" className='figure-text'>
+                            {TopsData[index].Item}
+                            <br></br>
+                            <i>{TopsData[index].Brand}</i>
+                            <br></br>
+                            ${TopsData[index].Price}
+                        </figcaption>
+                    </figure> 
+        }
+    }
+}
+
+TopsData.map((index) => {
+    if ( user clicks button )
+    index++;
+    {
+        <figure class="figure" className='figure'>
+                        <a href={TopsData[index % TopsData.length].Link}><img src={TopsData[index].Image} class="figure-img img-fluid rounded" alt="image" className='figure-image'/></a>
+                        <figcaption class="figure-caption" className='figure-text'>
+                            {TopsData[index].Item}
+                            <br></br>
+                            <i>{TopsData[index].Brand}</i>
+                            <br></br>
+                            ${TopsData[index].Price}
+                        </figcaption>
+                    </figure> 
+    }
+})
+
+
+/*
+{TopsData.map((d, index)=>{
+                    return <figure class="figure" className='figure'>
+                        <a href={d.Link}><img src={d.Image} class="figure-img img-fluid rounded" alt="image" className='figure-image'/></a>
+                        <figcaption class="figure-caption" className='figure-text'>
+                            {d.Item}
+                            <br></br>
+                            <i>{d.Brand}</i>
+                            <br></br>
+                            ${d.Price}
+                        </figcaption>
+                    </figure>
+                })}
+                */
+
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","../assets/tops-inventory.json":"assets/tops-inventory.json"}],"assets/bottoms-inventory.json":[function(require,module,exports) {
 module.exports = [{
@@ -35702,7 +35774,7 @@ var Bottoms = /*#__PURE__*/function (_Component) {
   _createClass(Bottoms, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, _bottomsInventory.default.map(function (d, index) {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Bottoms"), _bottomsInventory.default.map(function (d, index) {
         return /*#__PURE__*/_react.default.createElement("figure", {
           class: "figure",
           className: "figure"
@@ -35877,7 +35949,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63490" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54317" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -20,7 +20,7 @@ class Outfits extends Component {
                 })}
             </div>
         )
-    }
+    } 
 }
 
 export default Outfits;
