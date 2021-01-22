@@ -35780,62 +35780,6 @@ var Outfits = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 var _default = Outfits;
-/*
-
-
-/*
-int index = 0;
-for (int i = 0; i < TopsData.length; i++) {
-    if ( user clicks the button ) {
-        index++; 
-        {
-            <figure class="figure" className='figure'>
-                        <a href={TopsData[index].Link}><img src={TopsData[index].Image} class="figure-img img-fluid rounded" alt="image" className='figure-image'/></a>
-                        <figcaption class="figure-caption" className='figure-text'>
-                            {TopsData[index].Item}
-                            <br></br>
-                            <i>{TopsData[index].Brand}</i>
-                            <br></br>
-                            ${TopsData[index].Price}
-                        </figcaption>
-                    </figure> 
-        }
-    }
-}
-
-TopsData.map((index) => {
-    if ( user clicks button )
-    index++;
-    {
-        <figure class="figure" className='figure'>
-                        <a href={TopsData[index % TopsData.length].Link}><img src={TopsData[index].Image} class="figure-img img-fluid rounded" alt="image" className='figure-image'/></a>
-                        <figcaption class="figure-caption" className='figure-text'>
-                            {TopsData[index].Item}
-                            <br></br>
-                            <i>{TopsData[index].Brand}</i>
-                            <br></br>
-                            ${TopsData[index].Price}
-                        </figcaption>
-                    </figure> 
-    }
-})
-
-
-/*
-{TopsData.map((d, index)=>{
-                    return <figure class="figure" className='figure'>
-                        <a href={d.Link}><img src={d.Image} class="figure-img img-fluid rounded" alt="image" className='figure-image'/></a>
-                        <figcaption class="figure-caption" className='figure-text'>
-                            {d.Item}
-                            <br></br>
-                            <i>{d.Brand}</i>
-                            <br></br>
-                            ${d.Price}
-                        </figcaption>
-                    </figure>
-                })}
-                */
-
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","../assets/tops-inventory.json":"assets/tops-inventory.json","../assets/bottoms-inventory.json":"assets/bottoms-inventory.json","./Bottoms":"components/Bottoms.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
