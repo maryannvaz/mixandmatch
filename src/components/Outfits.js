@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TopsData from '../assets/tops-inventory.json';
 import BottomsData from '../assets/bottoms-inventory.json';
-import Bottoms from './Bottoms';
 
 class Outfits extends Component {
     state = { topsIndex: 0, bottomsIndex: 0 };
