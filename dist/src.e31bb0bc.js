@@ -35712,13 +35712,26 @@ var Outfits = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      index: 0
+      topsIndex: 0,
+      bottomsIndex: 0
     });
 
-    _defineProperty(_assertThisInitialized(_this), "myFunction", function () {
+    _defineProperty(_assertThisInitialized(_this), "topsFunction", function () {
       _this.setState({
-        index: _this.state.index + 1
+        topsIndex: _this.state.topsIndex + 1
       });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "bottomsFunction", function () {
+      _this.setState({
+        bottomsIndex: _this.state.bottomsIndex + 1
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "bothFunction", function () {
+      _this.topsFunction();
+
+      _this.bottomsFunction();
     });
 
     return _this;
@@ -35728,34 +35741,38 @@ var Outfits = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Outfits"), /*#__PURE__*/_react.default.createElement("button", {
-        onClick: this.myFunction
-      }, "Click me!"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("figure", {
+        onClick: this.topsFunction
+      }, "Tops button"), /*#__PURE__*/_react.default.createElement("button", {
+        onClick: this.bottomsFunction
+      }, "Bottoms button"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("figure", {
         class: "figure",
         className: "figure"
       }, /*#__PURE__*/_react.default.createElement("a", {
-        href: _topsInventory.default[this.state.index % _topsInventory.default.length].Link
+        href: _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Link
       }, /*#__PURE__*/_react.default.createElement("img", {
-        src: _topsInventory.default[this.state.index % _topsInventory.default.length].Image,
+        src: _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Image,
         class: "figure-img img-fluid rounded",
         alt: "image",
         className: "figure-image"
       })), /*#__PURE__*/_react.default.createElement("figcaption", {
         class: "figure-caption",
         className: "figure-text"
-      }, _topsInventory.default[this.state.index % _topsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _topsInventory.default[this.state.index % _topsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _topsInventory.default[this.state.index % _topsInventory.default.length].Price)), /*#__PURE__*/_react.default.createElement("figure", {
+      }, _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Price)), /*#__PURE__*/_react.default.createElement("figure", {
         class: "figure",
         className: "figure"
       }, /*#__PURE__*/_react.default.createElement("a", {
-        href: _bottomsInventory.default[this.state.index % _bottomsInventory.default.length].Link
+        href: _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Link
       }, /*#__PURE__*/_react.default.createElement("img", {
-        src: _bottomsInventory.default[this.state.index % _bottomsInventory.default.length].Image,
+        src: _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Image,
         class: "figure-img img-fluid rounded",
         alt: "image",
         className: "figure-image"
       })), /*#__PURE__*/_react.default.createElement("figcaption", {
         class: "figure-caption",
         className: "figure-text"
-      }, _bottomsInventory.default[this.state.index % _bottomsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _bottomsInventory.default[this.state.index % _bottomsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _bottomsInventory.default[this.state.index % _bottomsInventory.default.length].Price))));
+      }, _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Price))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+        onClick: this.bothFunction
+      }, "Both button"));
     }
   }]);
 
