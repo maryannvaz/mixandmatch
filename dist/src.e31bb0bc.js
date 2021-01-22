@@ -34948,40 +34948,6 @@ var Contact = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 var _default = Contact;
-/*
-import React from 'react';
-import SOCIAL_PROFILES from '../data/socialProfiles';
-
-const SocialProfile = props => {
-    const { link, image } = props.socialProfile;
-
-    return (
-        <span>
-            <a href={link}>
-                <img src={image} alt='social-profile' style={{ width: 35, height: 35, margin: 10 }} />
-            </a>
-        </span>
-    )
-}
-
-const SocialProfiles = () => (
-    <div>
-        <h2>Connect with me!</h2>
-        <div>
-            {
-                SOCIAL_PROFILES.map(SOCIAL_PROFILE => {
-                    return (
-                        <SocialProfile key={SOCIAL_PROFILE.id} socialProfile={SOCIAL_PROFILE} />
-                    )
-                })
-            }
-        </div>
-    </div>
-)
-
-
-export default SocialProfiles;*/
-
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"assets/cover.png":[function(require,module,exports) {
 module.exports = "/cover.e0ccda66.png";
@@ -35740,11 +35706,12 @@ var Outfits = /*#__PURE__*/function (_Component) {
   _createClass(Outfits, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Outfits"), /*#__PURE__*/_react.default.createElement("button", {
-        onClick: this.topsFunction
-      }, "Tops button"), /*#__PURE__*/_react.default.createElement("button", {
-        onClick: this.bottomsFunction
-      }, "Bottoms button"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("figure", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Outfits"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          display: 'inline-block',
+          margin: '0% 5% 0% 5%'
+        }
+      }, /*#__PURE__*/_react.default.createElement("figure", {
         class: "figure",
         className: "figure"
       }, /*#__PURE__*/_react.default.createElement("a", {
@@ -35757,7 +35724,12 @@ var Outfits = /*#__PURE__*/function (_Component) {
       })), /*#__PURE__*/_react.default.createElement("figcaption", {
         class: "figure-caption",
         className: "figure-text"
-      }, _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Price)), /*#__PURE__*/_react.default.createElement("figure", {
+      }, _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _topsInventory.default[this.state.topsIndex % _topsInventory.default.length].Price))), /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          display: 'inline-block',
+          margin: '0% 5% 0% 5%'
+        }
+      }, /*#__PURE__*/_react.default.createElement("figure", {
         class: "figure",
         className: "figure"
       }, /*#__PURE__*/_react.default.createElement("a", {
@@ -35770,9 +35742,16 @@ var Outfits = /*#__PURE__*/function (_Component) {
       })), /*#__PURE__*/_react.default.createElement("figcaption", {
         class: "figure-caption",
         className: "figure-text"
-      }, _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Price))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
-        onClick: this.bothFunction
-      }, "Both button"));
+      }, _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Item, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("i", null, _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Brand), /*#__PURE__*/_react.default.createElement("br", null), "$", _bottomsInventory.default[this.state.bottomsIndex % _bottomsInventory.default.length].Price)))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+        onClick: this.topsFunction,
+        className: "tops-button"
+      }, "Tops"), /*#__PURE__*/_react.default.createElement("button", {
+        onClick: this.bottomsFunction,
+        className: "bottoms-button"
+      }, "Bottoms"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+        onClick: this.bothFunction,
+        className: "both-button"
+      }, "Mix and match!")));
     }
   }]);
 
@@ -35932,7 +35911,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55761" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58406" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

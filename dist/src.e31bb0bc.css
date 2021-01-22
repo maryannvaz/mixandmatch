@@ -90,3 +90,11 @@ hr {
     padding: 10px;
     text-align: left;
 }
+
+.tops-button {
+    margin: 5px 100px 0px 100px;
+}
+
+.bottoms-button {
+    margin: 5px 100px 0px 100px;
+}
