@@ -4,6 +4,10 @@
   "homepage": "https://maryannvaz.github.io/mixandmatch/",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "npm": "7.6.1",
+    "node": "14.15.0"
+  },
   "scripts": {
     "dev": "parcel index.html",
     "predeploy": "npm run build",
