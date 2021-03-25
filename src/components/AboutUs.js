@@ -6,14 +6,17 @@ class AboutUs extends Component {
             <div>
                 <h1>About Us</h1>
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 
-                    1500s, when an unknown printer took a galley of type and scrambled it
-                    to make a type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining essentially 
-                    unchanged. It was popularised in the 1960s with the release of Letraset
-                    sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Welcome to Miranda and Maryann's Mix and Match website! 
+                </p>
+                <p>
+                    Have you seen 1995 American coming-of-age teen comedy film
+                    Clueless, where main character Cher was able to wake up and simply select matching
+                    outfits with a <i>few clicks of a button</i>? Upon watching this film, we both were inspired to realize such 
+                    a silly technology. 
+                </p>
+                <p>
+                    We hope that our website 
+                    inspires you to achieve <i>your</i> fashionista dreams!
                 </p>
             </div>
         )

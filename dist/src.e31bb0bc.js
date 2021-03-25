@@ -34881,7 +34881,7 @@ var AboutUs = /*#__PURE__*/function (_Component) {
   _createClass(AboutUs, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "About Us"), /*#__PURE__*/_react.default.createElement("p", null, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "About Us"), /*#__PURE__*/_react.default.createElement("p", null, "Welcome to Miranda and Maryann's Mix and Match website!"), /*#__PURE__*/_react.default.createElement("p", null, "Have you seen 1995 American coming-of-age teen comedy film Clueless, where main character Cher was able to wake up and simply select matching outfits with a ", /*#__PURE__*/_react.default.createElement("i", null, "few clicks of a button"), "? Upon watching this film, we both were inspired to realize such a silly technology."), /*#__PURE__*/_react.default.createElement("p", null, "We hope that our website inspires you to achieve ", /*#__PURE__*/_react.default.createElement("i", null, "your"), " fashionista dreams!"));
     }
   }]);
 
@@ -34940,7 +34940,7 @@ var Contact = /*#__PURE__*/function (_Component) {
   _createClass(Contact, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Contact"), /*#__PURE__*/_react.default.createElement("p", null, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Contact"), /*#__PURE__*/_react.default.createElement("p", null, "Email us at mixandmatch.contactus@gmail.com with any inquiries!"));
     }
   }]);
 
@@ -35909,7 +35909,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58406" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54889" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
