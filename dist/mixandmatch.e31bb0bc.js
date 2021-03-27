@@ -5,8 +5,6 @@
 //
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
-
-// eslint-disable-next-line no-global-assign
 parcelRequire = (function (modules, cache, entry, globalName) {
   // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
@@ -77,8 +75,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }, {}];
   };
 
+  var error;
   for (var i = 0; i < entry.length; i++) {
-    newRequire(entry[i]);
+    try {
+      newRequire(entry[i]);
+    } catch (e) {
+      // Save first error but execute all entries
+      if (!error) {
+        error = e;
+      }
+    }
   }
 
   if (entry.length) {
@@ -103,6 +109,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   // Override the current require with this new one
+  parcelRequire = newRequire;
+
+  if (error) {
+    // throw error from earlier, _after updating parcelRequire_
+    throw error;
+  }
+
   return newRequire;
 })({"node_modules/object-assign/index.js":[function(require,module,exports) {
 /*
@@ -201,7 +214,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   return to;
 };
 },{}],"node_modules/react/cjs/react.development.js":[function(require,module,exports) {
-/** @license React v17.0.1
+/** @license React v17.0.2
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -218,7 +231,7 @@ if ("development" !== "production") {
     var _assign = require('object-assign'); // TODO: this is special because it gets imported during build.
 
 
-    var ReactVersion = '17.0.1'; // ATTENTION
+    var ReactVersion = '17.0.2'; // ATTENTION
     // When adding new symbols to this file,
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
@@ -2493,7 +2506,7 @@ if ("development" === 'production') {
   module.exports = require('./cjs/react.development.js');
 }
 },{"./cjs/react.development.js":"node_modules/react/cjs/react.development.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
-/** @license React v0.20.1
+/** @license React v0.20.2
  * scheduler.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -2508,7 +2521,7 @@ if ("development" !== "production") {
     'use strict';
 
     var enableSchedulerDebugging = false;
-    var enableProfiling = true;
+    var enableProfiling = false;
     var requestHostCallback;
     var requestHostTimeout;
     var cancelHostTimeout;
@@ -2780,179 +2793,13 @@ if ("development" !== "production") {
     } // TODO: Use symbols?
 
 
-    var NoPriority = 0;
     var ImmediatePriority = 1;
     var UserBlockingPriority = 2;
     var NormalPriority = 3;
     var LowPriority = 4;
     var IdlePriority = 5;
-    var runIdCounter = 0;
-    var mainThreadIdCounter = 0;
-    var profilingStateSize = 4;
-    var sharedProfilingBuffer = // $FlowFixMe Flow doesn't know about SharedArrayBuffer
-    typeof SharedArrayBuffer === 'function' ? new SharedArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : // $FlowFixMe Flow doesn't know about ArrayBuffer
-    typeof ArrayBuffer === 'function' ? new ArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : null // Don't crash the init path on IE9
-    ;
-    var profilingState = sharedProfilingBuffer !== null ? new Int32Array(sharedProfilingBuffer) : []; // We can't read this but it helps save bytes for null checks
 
-    var PRIORITY = 0;
-    var CURRENT_TASK_ID = 1;
-    var CURRENT_RUN_ID = 2;
-    var QUEUE_SIZE = 3;
-    {
-      profilingState[PRIORITY] = NoPriority; // This is maintained with a counter, because the size of the priority queue
-      // array might include canceled tasks.
-
-      profilingState[QUEUE_SIZE] = 0;
-      profilingState[CURRENT_TASK_ID] = 0;
-    } // Bytes per element is 4
-
-    var INITIAL_EVENT_LOG_SIZE = 131072;
-    var MAX_EVENT_LOG_SIZE = 524288; // Equivalent to 2 megabytes
-
-    var eventLogSize = 0;
-    var eventLogBuffer = null;
-    var eventLog = null;
-    var eventLogIndex = 0;
-    var TaskStartEvent = 1;
-    var TaskCompleteEvent = 2;
-    var TaskErrorEvent = 3;
-    var TaskCancelEvent = 4;
-    var TaskRunEvent = 5;
-    var TaskYieldEvent = 6;
-    var SchedulerSuspendEvent = 7;
-    var SchedulerResumeEvent = 8;
-
-    function logEvent(entries) {
-      if (eventLog !== null) {
-        var offset = eventLogIndex;
-        eventLogIndex += entries.length;
-
-        if (eventLogIndex + 1 > eventLogSize) {
-          eventLogSize *= 2;
-
-          if (eventLogSize > MAX_EVENT_LOG_SIZE) {
-            // Using console['error'] to evade Babel and ESLint
-            console['error']("Scheduler Profiling: Event log exceeded maximum size. Don't " + 'forget to call `stopLoggingProfilingEvents()`.');
-            stopLoggingProfilingEvents();
-            return;
-          }
-
-          var newEventLog = new Int32Array(eventLogSize * 4);
-          newEventLog.set(eventLog);
-          eventLogBuffer = newEventLog.buffer;
-          eventLog = newEventLog;
-        }
-
-        eventLog.set(entries, offset);
-      }
-    }
-
-    function startLoggingProfilingEvents() {
-      eventLogSize = INITIAL_EVENT_LOG_SIZE;
-      eventLogBuffer = new ArrayBuffer(eventLogSize * 4);
-      eventLog = new Int32Array(eventLogBuffer);
-      eventLogIndex = 0;
-    }
-
-    function stopLoggingProfilingEvents() {
-      var buffer = eventLogBuffer;
-      eventLogSize = 0;
-      eventLogBuffer = null;
-      eventLog = null;
-      eventLogIndex = 0;
-      return buffer;
-    }
-
-    function markTaskStart(task, ms) {
-      {
-        profilingState[QUEUE_SIZE]++;
-
-        if (eventLog !== null) {
-          // performance.now returns a float, representing milliseconds. When the
-          // event is logged, it's coerced to an int. Convert to microseconds to
-          // maintain extra degrees of precision.
-          logEvent([TaskStartEvent, ms * 1000, task.id, task.priorityLevel]);
-        }
-      }
-    }
-
-    function markTaskCompleted(task, ms) {
-      {
-        profilingState[PRIORITY] = NoPriority;
-        profilingState[CURRENT_TASK_ID] = 0;
-        profilingState[QUEUE_SIZE]--;
-
-        if (eventLog !== null) {
-          logEvent([TaskCompleteEvent, ms * 1000, task.id]);
-        }
-      }
-    }
-
-    function markTaskCanceled(task, ms) {
-      {
-        profilingState[QUEUE_SIZE]--;
-
-        if (eventLog !== null) {
-          logEvent([TaskCancelEvent, ms * 1000, task.id]);
-        }
-      }
-    }
-
-    function markTaskErrored(task, ms) {
-      {
-        profilingState[PRIORITY] = NoPriority;
-        profilingState[CURRENT_TASK_ID] = 0;
-        profilingState[QUEUE_SIZE]--;
-
-        if (eventLog !== null) {
-          logEvent([TaskErrorEvent, ms * 1000, task.id]);
-        }
-      }
-    }
-
-    function markTaskRun(task, ms) {
-      {
-        runIdCounter++;
-        profilingState[PRIORITY] = task.priorityLevel;
-        profilingState[CURRENT_TASK_ID] = task.id;
-        profilingState[CURRENT_RUN_ID] = runIdCounter;
-
-        if (eventLog !== null) {
-          logEvent([TaskRunEvent, ms * 1000, task.id, runIdCounter]);
-        }
-      }
-    }
-
-    function markTaskYield(task, ms) {
-      {
-        profilingState[PRIORITY] = NoPriority;
-        profilingState[CURRENT_TASK_ID] = 0;
-        profilingState[CURRENT_RUN_ID] = 0;
-
-        if (eventLog !== null) {
-          logEvent([TaskYieldEvent, ms * 1000, task.id, runIdCounter]);
-        }
-      }
-    }
-
-    function markSchedulerSuspended(ms) {
-      {
-        mainThreadIdCounter++;
-
-        if (eventLog !== null) {
-          logEvent([SchedulerSuspendEvent, ms * 1000, mainThreadIdCounter]);
-        }
-      }
-    }
-
-    function markSchedulerUnsuspended(ms) {
-      {
-        if (eventLog !== null) {
-          logEvent([SchedulerResumeEvent, ms * 1000, mainThreadIdCounter]);
-        }
-      }
-    }
+    function markTaskErrored(task, ms) {}
     /* eslint-disable no-var */
     // Math.pow(2, 30) - 1
     // 0b111111111111111111111111111111
@@ -2993,10 +2840,6 @@ if ("development" !== "production") {
           pop(timerQueue);
           timer.sortIndex = timer.expirationTime;
           push(taskQueue, timer);
-          {
-            markTaskStart(timer, currentTime);
-            timer.isQueued = true;
-          }
         } else {
           // Remaining timers are pending.
           return;
@@ -3025,10 +2868,6 @@ if ("development" !== "production") {
     }
 
     function flushWork(hasTimeRemaining, initialTime) {
-      {
-        markSchedulerUnsuspended(initialTime);
-      } // We'll need a host callback the next time work is scheduled.
-
       isHostCallbackScheduled = false;
 
       if (isHostTimeoutScheduled) {
@@ -3061,11 +2900,6 @@ if ("development" !== "production") {
         currentTask = null;
         currentPriorityLevel = previousPriorityLevel;
         isPerformingWork = false;
-        {
-          var _currentTime = exports.unstable_now();
-
-          markSchedulerSuspended(_currentTime);
-        }
       }
     }
 
@@ -3086,19 +2920,12 @@ if ("development" !== "production") {
           currentTask.callback = null;
           currentPriorityLevel = currentTask.priorityLevel;
           var didUserCallbackTimeout = currentTask.expirationTime <= currentTime;
-          markTaskRun(currentTask, currentTime);
           var continuationCallback = callback(didUserCallbackTimeout);
           currentTime = exports.unstable_now();
 
           if (typeof continuationCallback === 'function') {
             currentTask.callback = continuationCallback;
-            markTaskYield(currentTask, currentTime);
           } else {
-            {
-              markTaskCompleted(currentTask, currentTime);
-              currentTask.isQueued = false;
-            }
-
             if (currentTask === peek(taskQueue)) {
               pop(taskQueue);
             }
@@ -3241,9 +3068,6 @@ if ("development" !== "production") {
         expirationTime: expirationTime,
         sortIndex: -1
       };
-      {
-        newTask.isQueued = false;
-      }
 
       if (startTime > currentTime) {
         // This is a delayed task.
@@ -3264,12 +3088,7 @@ if ("development" !== "production") {
         }
       } else {
         newTask.sortIndex = expirationTime;
-        push(taskQueue, newTask);
-        {
-          markTaskStart(newTask, currentTime);
-          newTask.isQueued = true;
-        } // Schedule a host callback, if needed. If we're already performing work,
-        // wait until the next time we yield.
+        push(taskQueue, newTask); // wait until the next time we yield.
 
         if (!isHostCallbackScheduled && !isPerformingWork) {
           isHostCallbackScheduled = true;
@@ -3294,16 +3113,8 @@ if ("development" !== "production") {
     }
 
     function unstable_cancelCallback(task) {
-      {
-        if (task.isQueued) {
-          var currentTime = exports.unstable_now();
-          markTaskCanceled(task, currentTime);
-          task.isQueued = false;
-        }
-      } // Null out the callback to indicate the task has been canceled. (Can't
       // remove from the queue because you can't remove arbitrary nodes from an
       // array based heap, only the first one.)
-
       task.callback = null;
     }
 
@@ -3312,11 +3123,7 @@ if ("development" !== "production") {
     }
 
     var unstable_requestPaint = requestPaint;
-    var unstable_Profiling = {
-      startLoggingProfilingEvents: startLoggingProfilingEvents,
-      stopLoggingProfilingEvents: stopLoggingProfilingEvents,
-      sharedProfilingBuffer: sharedProfilingBuffer
-    };
+    var unstable_Profiling = null;
     exports.unstable_IdlePriority = IdlePriority;
     exports.unstable_ImmediatePriority = ImmediatePriority;
     exports.unstable_LowPriority = LowPriority;
@@ -3344,7 +3151,7 @@ if ("development" === 'production') {
   module.exports = require('./cjs/scheduler.development.js');
 }
 },{"./cjs/scheduler.development.js":"node_modules/scheduler/cjs/scheduler.development.js"}],"node_modules/scheduler/cjs/scheduler-tracing.development.js":[function(require,module,exports) {
-/** @license React v0.20.1
+/** @license React v0.20.2
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3700,7 +3507,7 @@ if ("development" === 'production') {
   module.exports = require('./cjs/scheduler-tracing.development.js');
 }
 },{"./cjs/scheduler-tracing.development.js":"node_modules/scheduler/cjs/scheduler-tracing.development.js"}],"node_modules/react-dom/cjs/react-dom.development.js":[function(require,module,exports) {
-/** @license React v17.0.1
+/** @license React v17.0.2
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -15100,7 +14907,7 @@ if ("development" !== "production") {
     } // TODO: this is special because it gets imported during build.
 
 
-    var ReactVersion = '17.0.1';
+    var ReactVersion = '17.0.2';
     var NoMode = 0;
     var StrictMode = 1; // TODO: Remove BlockingMode and ConcurrentMode by reading from the root
     // tag instead
@@ -29759,7 +29566,23 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _setPrototypeOf;
+
+function _setPrototypeOf(o, p) {
+  exports.default = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+},{}],"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29767,12 +29590,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _inheritsLoose;
 
+var _setPrototypeOf = _interopRequireDefault(require("./setPrototypeOf.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
+  (0, _setPrototypeOf.default)(subClass, superClass);
 }
-},{}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+},{"./setPrototypeOf.js":"node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js"}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -34863,7 +34690,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -34922,7 +34749,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -35005,7 +34832,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -35054,9 +34881,7 @@ var App = /*#__PURE__*/function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./AboutUs":"components/AboutUs.js","./Contact":"components/Contact.js","../assets/cover.png":"assets/cover.png","../assets/tops.png":"assets/tops.png","../assets/bottoms.png":"assets/bottoms.png","../assets/outfit.png":"assets/outfit.png"}],"assets/geometrylogo.png":[function(require,module,exports) {
-module.exports = "/geometrylogo.b02b3d35.png";
-},{}],"components/Header.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./AboutUs":"components/AboutUs.js","./Contact":"components/Contact.js","../assets/cover.png":"assets/cover.png","../assets/tops.png":"assets/tops.png","../assets/bottoms.png":"assets/bottoms.png","../assets/outfit.png":"assets/outfit.png"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35067,8 +34892,6 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
-
-var _geometrylogo = _interopRequireDefault(require("../assets/geometrylogo.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35095,7 +34918,7 @@ var _default = Header;
 */
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../assets/geometrylogo.png":"assets/geometrylogo.png"}],"assets/tops-inventory.json":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"assets/tops-inventory.json":[function(require,module,exports) {
 module.exports = [{
   "id": "1",
   "Item": "Floral Flounce-Hem Top",
@@ -35313,7 +35136,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -35575,7 +35398,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -35716,7 +35539,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -35774,7 +35597,7 @@ function getBundleURL() {
   try {
     throw new Error();
   } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
 
     if (matches) {
       return getBaseURL(matches[0]);
@@ -35785,7 +35608,7 @@ function getBundleURL() {
 }
 
 function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
 }
 
 exports.getBundleURL = getBundleURLCached;
@@ -35904,26 +35727,47 @@ function Module(moduleName) {
 }
 
 module.bundle.Module = Module;
+var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
 
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55325" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51799" + '/');
 
   ws.onmessage = function (event) {
+    checkedAssets = {};
+    assetsToAccept = [];
     var data = JSON.parse(event.data);
 
     if (data.type === 'update') {
-      console.clear();
-      data.assets.forEach(function (asset) {
-        hmrApply(global.parcelRequire, asset);
-      });
+      var handled = false;
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
-          hmrAccept(global.parcelRequire, asset.id);
+          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
+          if (didAccept) {
+            handled = true;
+          }
         }
+      }); // Enable HMR for CSS by default.
+
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
       });
+
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
+      }
     }
 
     if (data.type === 'reload') {
@@ -36011,7 +35855,7 @@ function hmrApply(bundle, asset) {
   }
 }
 
-function hmrAccept(bundle, id) {
+function hmrAcceptCheck(bundle, id) {
   var modules = bundle.modules;
 
   if (!modules) {
@@ -36019,9 +35863,27 @@ function hmrAccept(bundle, id) {
   }
 
   if (!modules[id] && bundle.parent) {
-    return hmrAccept(bundle.parent, id);
+    return hmrAcceptCheck(bundle.parent, id);
   }
 
+  if (checkedAssets[id]) {
+    return;
+  }
+
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
+
+function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
 
@@ -36046,10 +35908,6 @@ function hmrAccept(bundle, id) {
 
     return true;
   }
-
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAccept(global.parcelRequire, id);
-  });
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/mixandmatch.e31bb0bc.map
+//# sourceMappingURL=/mixandmatch.e31bb0bc.js.map
