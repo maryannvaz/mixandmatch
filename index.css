@@ -41,7 +41,7 @@ hr {
 }
 
 .buttons:hover {
-    opacity: 60%;
+    /* opacity: 60%; */
     box-shadow: 8px 8px;
 }
 
@@ -74,7 +74,7 @@ hr {
 }
 
 .figure:hover {
-    opacity: 70%;
+    /* opacity: 70%; */
 }
 
 .figure-image {
